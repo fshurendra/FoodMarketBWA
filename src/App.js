@@ -1,11 +1,14 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {SplashScreen, SignIn} from './pages';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text style={styles.textTitle}>Food Market</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SignIn />
+    </NavigationContainer>
   );
 };
 
