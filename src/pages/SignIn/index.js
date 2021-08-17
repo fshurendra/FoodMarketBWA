@@ -7,7 +7,7 @@ const SignIn = () => {
     <View style={styles.page}>
       <Header title="Sign In" subTitle="Find your best ever meal" />
       <View style={styles.container}>
-        <TextInput label="Email" placeholder="Type your email address here" />
+        <TextInput label="Email" placeholder="Type your email here" />
         <Gap height={16} />
         <TextInput label="Password" placeholder="Type your password here" />
         <Gap height={24} />
