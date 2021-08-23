@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {IcStartOff, IcStartOn} from '../../../assets';
+import Rating from '../Rating';
 
 const FoodCard = ({image}) => {
   return (
@@ -8,16 +8,7 @@ const FoodCard = ({image}) => {
       <Image source={image} style={styles.image} />
       <View style={styles.content}>
         <Text style={styles.text}>Cherry Healthy</Text>
-        <View style={styles.ratingContainer}>
-          <View style={styles.startContainter}>
-            <Image source={IcStartOn} />
-            <Image source={IcStartOn} />
-            <Image source={IcStartOn} />
-            <Image source={IcStartOn} />
-            <Image source={IcStartOff} />
-          </View>
-          <Text>4.5</Text>
-        </View>
+        <Rating />
       </View>
     </View>
   );
@@ -42,6 +33,4 @@ const styles = StyleSheet.create({
   image: {width: 200, height: 140, resizeMode: 'cover'},
   content: {padding: 12},
   text: {fontSize: 16, fontFamily: 'Poppins-Regular'},
-  ratingContainer: {flexDirection: 'row'},
-  startContainter: {flexDirection: 'row'},
 });
