@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Dimensions, Image} from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import {FoodDummy1, FoodDummy2, FoodDummy3, FoodDummy4} from '../../../assets';
 import ItemListFood from '../ItemListFood';
+import {useNavigation} from '@react-navigation/native';
 
 const renderTabBar = props => (
   <TabBar
@@ -13,7 +14,13 @@ const renderTabBar = props => (
       width: '15%',
       marginLeft: '3%',
     }}
-    style={{backgroundColor: 'white'}}
+    style={{
+      backgroundColor: 'white',
+      elevation: 0,
+      shadowOpacity: 0,
+      borderBottomColor: '#F2F2F2',
+      borderBottomWidth: 1,
+    }}
     tabStyle={{width: 'auto'}}
     renderLabel={({route, focused, color}) => (
       <Text
@@ -28,33 +35,69 @@ const renderTabBar = props => (
 );
 
 const NewTaste = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{paddingTop: 8}}>
-      <ItemListFood image={FoodDummy1} />
-      <ItemListFood image={FoodDummy2} />
-      <ItemListFood image={FoodDummy3} />
-      <ItemListFood image={FoodDummy4} />
+    <View style={styles.page}>
+      <ItemListFood
+        image={FoodDummy1}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy2}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy3}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy4}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
     </View>
   );
 };
 
 const Popular = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{paddingTop: 8}}>
-      <ItemListFood image={FoodDummy2} />
-      <ItemListFood image={FoodDummy1} />
-      <ItemListFood image={FoodDummy4} />
-      <ItemListFood image={FoodDummy3} />
+    <View style={styles.page}>
+      <ItemListFood
+        image={FoodDummy2}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy1}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy4}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy3}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
     </View>
   );
 };
 
 const Recommended = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{paddingTop: 8}}>
-      <ItemListFood image={FoodDummy1} />
-      <ItemListFood image={FoodDummy3} />
-      <ItemListFood image={FoodDummy2} />
+    <View style={styles.page}>
+      <ItemListFood
+        image={FoodDummy1}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy3}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
+      <ItemListFood
+        image={FoodDummy2}
+        onPress={() => navigation.navigate('FoodDetails')}
+      />
     </View>
   );
 };
@@ -82,10 +125,13 @@ const HomeTabSection = () => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={{initialLayout}}
+      style={{backgroundColor: 'white'}}
     />
   );
 };
 
 export default HomeTabSection;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  page: {paddingTop: 8},
+});

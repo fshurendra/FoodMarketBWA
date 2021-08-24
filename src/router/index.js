@@ -10,6 +10,7 @@ import {
   Home,
   Order,
   Profile,
+  FoodDetails,
 } from '../pages';
 import {BottomNavigator} from '../components';
 
@@ -57,6 +58,11 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="FoodDetails"
+        component={FoodDetails}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
