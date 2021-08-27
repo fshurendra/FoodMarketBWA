@@ -9,7 +9,7 @@ import {
 import {FoodDummy6, IcBackWhite} from '../../assets';
 import {Button, Counter, Rating} from '../../components';
 
-const FoodDetails = () => {
+const FoodDetails = ({navigation}) => {
   return (
     <View style={styles.page}>
       <ImageBackground source={FoodDummy6} style={styles.cover}>
@@ -40,7 +40,10 @@ const FoodDetails = () => {
             <Text style={styles.totalPrice}>IDR 12.289.000</Text>
           </View>
           <View style={styles.button}>
-            <Button text="Order Now" />
+            <Button
+              text="Order Now"
+              onPress={() => navigation.navigate('FoodSummary')}
+            />
           </View>
         </View>
       </View>

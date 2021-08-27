@@ -39,18 +39,22 @@ const NewTaste = () => {
   return (
     <View style={styles.page}>
       <ItemListFood
+        rating={3}
         image={FoodDummy1}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy2}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy3}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy4}
         onPress={() => navigation.navigate('FoodDetails')}
       />
@@ -63,18 +67,22 @@ const Popular = () => {
   return (
     <View style={styles.page}>
       <ItemListFood
+        rating={3}
         image={FoodDummy2}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy1}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy4}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy3}
         onPress={() => navigation.navigate('FoodDetails')}
       />
@@ -87,14 +95,17 @@ const Recommended = () => {
   return (
     <View style={styles.page}>
       <ItemListFood
+        rating={3}
         image={FoodDummy1}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy3}
         onPress={() => navigation.navigate('FoodDetails')}
       />
       <ItemListFood
+        rating={3}
         image={FoodDummy2}
         onPress={() => navigation.navigate('FoodDetails')}
       />
@@ -133,5 +144,5 @@ const HomeTabSection = () => {
 export default HomeTabSection;
 
 const styles = StyleSheet.create({
-  page: {paddingTop: 8},
+  page: {paddingTop: 8, paddingHorizontal: 24},
 });
