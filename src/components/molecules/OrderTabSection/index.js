@@ -34,113 +34,96 @@ const renderTabBar = props => (
   />
 );
 
-const NewTaste = () => {
+const InProgress = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.page}>
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy1}
         onPress={() => navigation.navigate('FoodDetails')}
+        inProgress
+        type="in-progress"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
       />
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy2}
         onPress={() => navigation.navigate('FoodDetails')}
+        type="in-progress"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
       />
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy3}
         onPress={() => navigation.navigate('FoodDetails')}
+        type="in-progress"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
       />
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy4}
         onPress={() => navigation.navigate('FoodDetails')}
+        type="in-progress"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
       />
     </View>
   );
 };
 
-const Popular = () => {
+const PastOrders = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.page}>
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy2}
         onPress={() => navigation.navigate('FoodDetails')}
+        type="past-orders"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
+        date="Jun 12, 14:00"
       />
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy1}
         onPress={() => navigation.navigate('FoodDetails')}
+        type="past-orders"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
+        date="Mei 2, 09:00"
+        status="Cancelled"
       />
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy4}
         onPress={() => navigation.navigate('FoodDetails')}
+        type="past-orders"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
+        date="Jun 12, 14:00"
       />
       <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
         rating={3}
         image={FoodDummy3}
         onPress={() => navigation.navigate('FoodDetails')}
-      />
-    </View>
-  );
-};
-
-const Recommended = () => {
-  const navigation = useNavigation();
-  return (
-    <View style={styles.page}>
-      <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
-        rating={3}
-        image={FoodDummy1}
-        onPress={() => navigation.navigate('FoodDetails')}
-      />
-      <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
-        rating={3}
-        image={FoodDummy3}
-        onPress={() => navigation.navigate('FoodDetails')}
-      />
-      <ItemListFood
-        type="product"
-        name="Sop Bulur"
-        price="380.000"
-        rating={3}
-        image={FoodDummy2}
-        onPress={() => navigation.navigate('FoodDetails')}
+        type="past-orders"
+        items={3}
+        price="2.000.000"
+        name="Sop Bumil"
+        date="Mei 2, 09:00"
+        status="Cancelled"
       />
     </View>
   );
@@ -148,18 +131,16 @@ const Recommended = () => {
 
 const initialLayout = {width: Dimensions.get('window').width};
 
-const HomeTabSection = () => {
+const OrderTabSection = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    {key: '1', title: 'New Taste'},
-    {key: '2', title: 'Popular'},
-    {key: '3', title: 'Recommended'},
+    {key: '1', title: 'In Progress'},
+    {key: '2', title: 'Past Orders'},
   ]);
 
   const renderScene = SceneMap({
-    1: NewTaste,
-    2: Popular,
-    3: Recommended,
+    1: InProgress,
+    2: PastOrders,
   });
 
   return (
@@ -174,7 +155,7 @@ const HomeTabSection = () => {
   );
 };
 
-export default HomeTabSection;
+export default OrderTabSection;
 
 const styles = StyleSheet.create({
   page: {paddingTop: 8, paddingHorizontal: 24},
